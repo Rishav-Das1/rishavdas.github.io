@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Rishav Das — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Rishav Das — Frontend Developer & Designer. Skills, experience, projects, and contact info." />
+
+  <!-- Open Graph (for nice link previews when shared) -->
+  <meta property="og:title" content="Rishav Das — Portfolio" />
+  <meta property="og:description" content="Frontend Developer & Designer. Take a look at my work and get in touch." />
+  <meta property="og:type" content="website" />
+
+  <!-- Prevents the browser requesting /favicon.ico (remove once you add a real favicon) -->
+  <link rel="icon" href="data:," />
+
+  <!-- Fonts: Bricolage Grotesque (display), Inter (body), JetBrains Mono (labels/data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Set the theme before first paint to avoid a flash of the wrong colors -->
+  <script>
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Reusable icon sprite. Each <symbol> is referenced via <use href="#icon-name"/> -->
+  <svg aria-hidden="true" style="display:none">
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="icon-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="icon-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.71 5.42-5.28 5.7.42.36.78 1.07.78 2.15v3.19c0 .3.21.65.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path d="M18.24 2.25h3.31l-7.23 8.26 8.26 10.99h-6.05l-6.24-8.17-7.14 8.17H1.21l7.97-9.12L1.39 2.25h6.07l5.96 7.85 5.82-7.85z"/></symbol>
+  </svg>
+
+  <!-- Scroll progress indicator -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ============================================
+       MOBILE TOP BAR (visible below ~1024px)
+       EDIT: change "Your Name" to your name
+       ============================================ -->
+  <header class="mobile-bar">
+    <a href="#home" class="mobile-logo">Rishav Das</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg class="icon icon-open" aria-hidden="true"><use href="#icon-menu"/></svg>
+      <svg class="icon icon-shut" aria-hidden="true"><use href="#icon-close"/></svg>
+    </button>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- ============================================
+       SIDEBAR — identity card + nav + status
+       EDIT: name, role, social links, timezone-based
+       status is configured in script.js
+       ============================================ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="avatar">
+        <!-- Replace the icon below with: <img src="assets/profile.jpg" alt="Your Name" /> -->
+        <svg class="icon icon-xl" aria-hidden="true"><use href="#icon-user"/></svg>
+      </div>
+      <p class="sidebar-name">Rishav Das</p>
+      <p class="sidebar-role">Frontend Developer &amp; Designer</p>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Primary">
+      <a href="#home" class="nav-link" data-section="home">Home</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="status-widget">
+        <span class="status-dot" id="statusDot"></span>
+        <div class="status-text">
+          <span class="status-label" id="statusLabel">Available for work</span>
+          <span class="status-time" id="statusTime">--:--:--</span>
+        </div>
+      </div>
+
+      <div class="sidebar-actions">
+        <a href="https://github.com/Rishav-Das1" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub profile">
+          <svg class="icon icon-brand" aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/Rishav Das" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn profile">
+          <svg class="icon icon-brand" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+        </a>
+        <a href="mailto:rishav.das@niser.ac.in" class="icon-btn" aria-label="Send an email">
+          <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+        </a>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon theme-icon-light" aria-hidden="true"><use href="#icon-sun"/></svg>
+          <svg class="icon theme-icon-dark" aria-hidden="true"><use href="#icon-moon"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="main">
+
+    <!-- HERO — EDIT: name, role list (in script.js), and intro text -->
+    <section class="hero" id="home">
+      <div class="hero-decor" aria-hidden="true">
+        <span class="decor decor-circle"></span>
+        <span class="decor decor-square"></span>
+        <span class="decor decor-plus">+</span>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Hello, I'm <strong>Rishav Das</strong></p>
+        <h1 class="hero-title">I'm a <span class="typed-text" id="typedText"></span><span class="cursor" aria-hidden="true"></span></h1>
+        <p class="hero-text">
+          I design and build clean, accessible, and user-friendly digital
+          experiences. This is my corner of the web — take a look around,
+          check out my work, and feel free to say hello.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"/></svg>
+      </a>
+    </section>
+
+    <!-- ABOUT — EDIT: bio paragraphs, quick facts, interests, stats -->
+    <section class="content-section" id="about">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a developer who loves the space where design and code meet —
+            building interfaces that aren't just functional, but genuinely
+            pleasant to use. I care about the small details: a button that
+            responds just right, a layout that breathes, a page that loads fast.
+          </p>
+          <p>
+            Outside of work, I'm usually reading sci-fi, tinkering with side
+            projects, or out exploring somewhere new. I'm always happy to chat
+            about a project, a tricky problem, or just trade book recommendations.
+          </p>
+
+          <dl class="fact-list">
+            <div class="fact-row">
+              <dt>Based in</dt>
+              <dd>Bhubaneswar, India</dd>
+            </div>
+            <div class="fact-row">
+              <dt>Email</dt>
+              <dd><a href="mailto:rishav.das@niser.ac.in">rishav.das@niser.ac.in</a></dd>
+            </div>
+            <div class="fact-row">
+              <dt>Status</dt>
+              <dd>Open to new opportunities</dd>
+            </div>
+            <div class="fact-row">
+              <dt>Languages</dt>
+              <dd>English, [Your Language]</dd>
+            </div>
+          </dl>
+
+          <div class="tag-list">
+            <span class="tag">Photography</span>
+            <span class="tag">Sci-Fi Novels</span>
+            <span class="tag">Hiking</span>
+            <span class="tag">Chess</span>
+            <span class="tag">Indie Games</span>
+          </div>
+
+          <a href="resume.pdf" class="btn btn-primary" download>
+            <svg class="icon" aria-hidden="true"><use href="#icon-download"/></svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <p class="stat-num"><span data-target="3">0</span>+</p>
+          <p class="stat-label">Years Experience</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span data-target="25">0</span>+</p>
+          <p class="stat-label">Projects Completed</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span data-target="15">0</span>+</p>
+          <p class="stat-label">Happy Clients</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span data-target="500">0</span>+</p>
+          <p class="stat-label">Cups of Coffee</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS — EDIT: categories, skill names, and percentages (data-width 0-100) -->
+    <section class="content-section" id="skills">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Skills &amp; Expertise</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Frontend</h3>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>HTML &amp; CSS</span><span>95%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>JavaScript</span><span>88%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>React</span><span>82%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Tailwind CSS</span><span>85%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Backend</h3>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Node.js</span><span>78%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Python</span><span>72%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="72"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>REST APIs</span><span>85%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>PostgreSQL</span><span>75%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Tools &amp; Platforms</h3>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Git &amp; GitHub</span><span>92%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Figma</span><span>75%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Docker</span><span>65%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>VS Code</span><span>95%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Soft Skills</h3>
+          <div class="tag-list">
+            <span class="tag">Communication</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Adaptability</span>
+            <span class="tag">Time Management</span>
+            <span class="tag">Creativity</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">Curiosity</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE — EDIT: dates, titles, organizations, descriptions -->
+    <section class="content-section" id="experience">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Experience &amp; Education</h2>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-date">2024 — Present</span>
+          <h3>Senior Frontend Developer</h3>
+          <p class="timeline-org">Nimbus Technologies · Remote</p>
+          <p>Leading development of the customer dashboard, mentoring two
+             junior developers, and improving page load times by 40% through
+             code-splitting and image optimization.</p>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2022 — 2024</span>
+          <h3>Frontend Developer</h3>
+          <p class="timeline-org">BrightPixel Studio · City, Country</p>
+          <p>Built responsive marketing sites and web apps for clients across
+             retail and education, working closely with designers to turn
+             Figma mockups into pixel-accurate, accessible interfaces.</p>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2019 — 2022</span>
+          <h3>B.Tech in Computer Science</h3>
+          <p class="timeline-org">Your University · City, Country</p>
+          <p>Graduated with honors. Focused on web technologies and
+             human-computer interaction; led a student team that built an
+             award-winning campus events app.</p>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">2022</span>
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p class="timeline-org">Amazon Web Services</p>
+          <p>Certification covering core AWS services, security, pricing,
+             and architecture best practices.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PROJECTS — EDIT: titles, descriptions, tags, and links -->
+    <section class="content-section" id="projects">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-thumb thumb-a">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-cart"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>ShopWave</h3>
+            <p>A full-stack e-commerce platform with product search, a cart,
+               secure checkout, and an admin dashboard for managing inventory.</p>
+            <div class="tag-list">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Live Demo</a>
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-b">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-grid"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>TaskFlow</h3>
+            <p>A collaborative task manager with drag-and-drop boards,
+               real-time updates, and shared team workspaces.</p>
+            <div class="tag-list">
+              <span class="tag">Vue.js</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Live Demo</a>
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-c">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-cloud"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>SkyCast</h3>
+            <p>An interactive weather dashboard with location search, hourly
+               breakdowns, and a 7-day forecast powered by a public API.</p>
+            <div class="tag-list">
+              <span class="tag">JavaScript</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Chart.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Live Demo</a>
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-d">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-globe"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>This Portfolio</h3>
+            <p>The very site you're looking at — a responsive personal
+               site with light/dark themes, built with plain HTML, CSS,
+               and JavaScript.</p>
+            <div class="tag-list">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Live Demo</a>
+              <a href="#" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT — EDIT: email, location, and form behavior (see script.js) -->
+    <section class="content-section" id="contact">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            I'm currently open to new opportunities and collaborations.
+            Whether you have a question, a project in mind, or just want
+            to say hello — my inbox is always open.
+          </p>
+          <a href="mailto:rishav.das@niser.ac.in" class="contact-link">
+            <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+            rishav.das@niser.ac.in
+          </a>
+          <p class="contact-link">
+            <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>
+            City, Country
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Rishav Das. Built with HTML, CSS &amp; JavaScript.</p>
+    </footer>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
