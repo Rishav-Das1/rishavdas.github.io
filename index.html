@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Rishav Das — Portfolio</title>
+  <meta name="description" content="Portfolio of Rishav Das — Integrated M.Sc. student in Physical Sciences at NISER Bhubaneswar, working at the intersection of astrophysics, machine learning, and computational science." />
+
+  <!-- Open Graph (link preview when shared) -->
+  <meta property="og:title" content="Rishav Das — Portfolio" />
+  <meta property="og:description" content="Physicist & researcher working at the intersection of astrophysics, ML, and computational science at NISER Bhubaneswar." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:," />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Set theme before first paint to avoid flash -->
+  <script>
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- SVG Icon Sprite -->
+  <svg aria-hidden="true" style="display:none">
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+    <symbol id="icon-arrow-down" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+    <symbol id="icon-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="icon-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="icon-cloud" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.44-2.71 5.42-5.28 5.7.42.36.78 1.07.78 2.15v3.19c0 .3.21.65.79.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.73 18.27.5 12 .5z"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  </svg>
+
+  <!-- Scroll progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Mobile top bar -->
+  <header class="mobile-bar">
+    <a href="#home" class="mobile-logo">Rishav Das</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg class="icon icon-open" aria-hidden="true"><use href="#icon-menu"/></svg>
+      <svg class="icon icon-shut" aria-hidden="true"><use href="#icon-close"/></svg>
+    </button>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- =====================================================
+       SIDEBAR
+       TODO: Replace the avatar icon with your photo:
+       <img src="assets/profile.jpg" alt="Rishav Das" />
+       Update GitHub & LinkedIn URLs to your actual profiles.
+       ===================================================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="avatar">
+        <!-- Replace this with <img src="assets/profile.jpg" alt="Rishav Das" /> -->
+        <svg class="icon icon-xl" aria-hidden="true"><use href="#icon-user"/></svg>
+      </div>
+      <p class="sidebar-name">Rishav Das</p>
+      <p class="sidebar-role">Physicist &amp; Researcher</p>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Primary">
+      <a href="#home"       class="nav-link" data-section="home">Home</a>
+      <a href="#about"      class="nav-link" data-section="about">About</a>
+      <a href="#skills"     class="nav-link" data-section="skills">Skills</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#projects"   class="nav-link" data-section="projects">Research</a>
+      <a href="#contact"    class="nav-link" data-section="contact">Contact</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="status-widget">
+        <span class="status-dot" id="statusDot"></span>
+        <div class="status-text">
+          <span class="status-label" id="statusLabel">Available for work</span>
+          <span class="status-time"  id="statusTime">--:--:--</span>
+        </div>
+      </div>
+
+      <div class="sidebar-actions">
+        <!-- TODO: update href to your actual GitHub username -->
+        <a href="https://github.com/rishavdas" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub profile">
+          <svg class="icon icon-brand" aria-hidden="true"><use href="#icon-github"/></svg>
+        </a>
+        <!-- TODO: update href to your actual LinkedIn profile -->
+        <a href="https://linkedin.com/in/rishav-das" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn profile">
+          <svg class="icon icon-brand" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+        </a>
+        <a href="mailto:rishav.das@niser.ac.in" class="icon-btn" aria-label="Send email">
+          <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+        </a>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="icon theme-icon-light" aria-hidden="true"><use href="#icon-sun"/></svg>
+          <svg class="icon theme-icon-dark"  aria-hidden="true"><use href="#icon-moon"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-decor" aria-hidden="true">
+        <span class="decor decor-circle"></span>
+        <span class="decor decor-square"></span>
+        <span class="decor decor-plus">+</span>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Hello, I'm <strong>Rishav Das</strong></p>
+        <h1 class="hero-title">I'm a <span class="typed-text" id="typedText"></span><span class="cursor" aria-hidden="true"></span></h1>
+        <p class="hero-text">
+          Fifth-year Integrated M.Sc. student in Physical Sciences at NISER
+          Bhubaneswar. I work at the intersection of astrophysics, machine
+          learning, and computational science — from automating ALMA data
+          pipelines to publishing research on graph neural networks.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Research</a>
+          <a href="#contact"  class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"/></svg>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a fifth-year Integrated M.Sc. student in Physical Sciences at the
+            National Institute of Science Education and Research (NISER), Bhubaneswar —
+            an OCC of HBNI, Mumbai. My work spans astrophysics, computational science,
+            and machine learning: from building automated pipelines that mine ALMA radio
+            telescope archives, to developing graph neural network algorithms that have
+            been peer-reviewed and published.
+          </p>
+          <p>
+            I'm drawn to problems that sit at the boundary between disciplines — where a
+            physics intuition and a computer science toolkit have to work together. Outside
+            of research, I enjoy reading about quantum computing, contributing to open-source
+            scientific software, and occasionally gazing at the night sky with a dish antenna.
+            I'm actively looking ahead to PhD opportunities in astrophysics, computational
+            physics, or ML for science.
+          </p>
+
+          <dl class="fact-list">
+            <div class="fact-row">
+              <dt>Based in</dt>
+              <dd>Bhubaneswar, Odisha, India</dd>
+            </div>
+            <div class="fact-row">
+              <dt>Email</dt>
+              <dd><a href="mailto:rishav.das@niser.ac.in">rishav.das@niser.ac.in</a></dd>
+            </div>
+            <div class="fact-row">
+              <dt>Status</dt>
+              <dd>Seeking PhD opportunities</dd>
+            </div>
+            <div class="fact-row">
+              <dt>Languages</dt>
+              <dd>Bengali, English, Hindi</dd>
+            </div>
+          </dl>
+
+          <div class="tag-list">
+            <span class="tag">Astrophysics</span>
+            <span class="tag">Quantum Computing</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Stargazing</span>
+            <span class="tag">Science Fiction</span>
+          </div>
+
+          <!-- TODO: rename your CV file to "resume.pdf" and place it in the same folder -->
+          <a href="resume.pdf" class="btn btn-primary" download>
+            <svg class="icon" aria-hidden="true"><use href="#icon-download"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <p class="stat-num"><span data-target="5">0</span>+</p>
+          <p class="stat-label">Years at NISER</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span data-target="1">0</span>+</p>
+          <p class="stat-label">Papers Published</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span data-target="8">0</span>+</p>
+          <p class="stat-label">Research Projects</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span data-target="30">0</span>+</p>
+          <p class="stat-label">Courses Completed</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="content-section" id="skills">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Skills &amp; Expertise</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Python</span><span>90%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>C++</span><span>68%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="68"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>MySQL</span><span>60%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="60"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>HTML &amp; Web</span><span>65%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Astrophysics Tools</h3>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>CASA (ALMA)</span><span>85%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>RADMC-3D</span><span>78%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>FARGO3D</span><span>72%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="72"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>DustPy</span><span>70%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>ML &amp; Sci. Computing</h3>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>Scikit-learn</span><span>80%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>PyTorch</span><span>75%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>MCMC / Ultranest</span><span>72%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="72"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row-head"><span>GNN Design</span><span>70%</span></div>
+            <div class="skill-track"><div class="skill-fill" data-width="70"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Research Skills</h3>
+          <div class="tag-list">
+            <span class="tag">Scientific Writing</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Experimental Physics</span>
+            <span class="tag">Peer Review</span>
+            <span class="tag">Research Design</span>
+            <span class="tag">Collaboration</span>
+            <span class="tag">Presentation</span>
+            <span class="tag">Problem Solving</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & EDUCATION -->
+    <section class="content-section" id="experience">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Experience &amp; Education</h2>
+      </div>
+
+      <ol class="timeline">
+
+        <li class="timeline-item">
+          <span class="timeline-date">May 2025 — Present</span>
+          <h3>MSc Thesis — DRiveMiner</h3>
+          <p class="timeline-org">NISER Bhubaneswar &middot; Supervisors: Dr. Liton Majumdar &amp; Dr. Nishikanta Khandai</p>
+          <p>Building DRiveMiner: an automated CASA-based pipeline for protoplanetary disk
+             analysis of ALMA radio telescope data. It uses nested sampling, self-calibration,
+             and a novel non-parametric signal masking algorithm, plus a custom non-LTE
+             radiative transfer model (integrating pythonradex) to compute molecular
+             abundances at scale. Successfully constrained HCN and DCN in HD163296.</p>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-date">May 2024 — Oct 2025</span>
+          <h3>Research Internship — LIMO &nbsp;<span class="published-badge">Published</span></h3>
+          <p class="timeline-org">NISER Bhubaneswar &middot; Supervisor: Dr. Subhankar Mishra</p>
+          <p>Developed LIMO (Label Informativeness-Based Minority Oversampling), a novel
+             graph oversampling algorithm addressing class imbalance in GNNs. Proved
+             theoretically that GNN effectiveness is proportional to label informativeness
+             via mutual information. Validated on homophilous and heterophilous benchmark
+             datasets. Code open-sourced at github.com/smlab-niser/limo.</p>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-date">2021 — Present</span>
+          <h3>Integrated M.Sc., Physical Sciences</h3>
+          <p class="timeline-org">National Institute of Science Education &amp; Research (NISER), Bhubaneswar &middot; CGPA: 7.36</p>
+          <p>Five-year integrated programme spanning classical &amp; quantum physics, astrophysics,
+             cosmology, nonlinear dynamics, and relativity. Minor in Computer Science covering
+             ML, algorithms, discrete structures, and advanced machine learning theory.
+             Recipient of the DISHA Scholarship by the Department of Atomic Energy, Govt. of India.</p>
+        </li>
+
+        <li class="timeline-item">
+          <span class="timeline-date">2018 — 2020</span>
+          <h3>Class XII — CBSE</h3>
+          <p class="timeline-org">Kendriya Vidyalaya No. 3, Pune &middot; 93.2%</p>
+          <p>Secured 93.2% in CBSE board examinations. Qualified NEST 2021 (All India
+             Rank 164) and JEE Mains, earning admission to NISER through the DISHA
+             Scholarship by the Department of Atomic Energy.</p>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- RESEARCH & PROJECTS -->
+    <section class="content-section" id="projects">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Research &amp; Projects</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-thumb thumb-a">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-cloud"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>DRiveMiner</h3>
+            <p>Automated CASA-based pipeline for protoplanetary disk analysis using ALMA
+               archives. Features nested sampling, self-calibration, non-parametric signal
+               masking, and a non-LTE radiative transfer model. MSc Thesis, 2025–26.</p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">CASA</span>
+              <span class="tag">Non-LTE</span>
+              <span class="tag">Nested Sampling</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Details
+              </a>
+              <!-- TODO: add your GitHub repo link -->
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-b">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-grid"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>LIMO — Published Research</h3>
+            <p>Novel graph oversampling algorithm addressing class imbalance in GNNs.
+               Augments edges to maximise Label Informativeness, improving node-classification
+               — especially on heterophilous datasets. Peer-reviewed and published.</p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">GNNs</span>
+              <span class="tag">Graph Theory</span>
+            </div>
+            <div class="project-links">
+              <!-- TODO: add the paper's DOI/URL when public -->
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Paper
+              </a>
+              <a href="https://github.com/smlab-niser/limo" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-c">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-globe"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>DeepHalo Extension</h3>
+            <p>Instance segmentation of dark matter halos in the TNG Illustris
+               simulation. Converted 3D particle boxes to graphs; trained a Dynamic
+               Edge Conv GNN to predict halo and sub-halo locations across
+               simulation snapshots without previous snapshot data.</p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">GNNs</span>
+              <span class="tag">TNG Illustris</span>
+              <span class="tag">Edge Conv</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Details
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb thumb-d">
+            <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-star"/></svg>
+          </div>
+          <div class="project-body">
+            <h3>Galaxy Rotation Curve</h3>
+            <p>Constructed a dish antenna from scratch to observe 21cm HI emission
+               lines from the Milky Way. Measured Doppler shifts to derive the radial
+               velocity curve of hydrogen gas — directly confirming the presence
+               of dark matter in our galaxy.</p>
+            <div class="tag-list">
+              <span class="tag">Radio Astronomy</span>
+              <span class="tag">Python</span>
+              <span class="tag">Signal Processing</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-external"/></svg>Details
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#icon-code"/></svg>Source
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+      <div class="section-head">
+        <span class="label-marker" aria-hidden="true"></span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            Whether you have a research collaboration in mind, a PhD opportunity
+            to discuss, or just want to chat about astrophysics or machine learning —
+            feel free to reach out. My inbox is always open.
+          </p>
+          <a href="mailto:rishav.das@niser.ac.in" class="contact-link">
+            <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg>
+            rishav.das@niser.ac.in
+          </a>
+          <p class="contact-link">
+            <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>
+            Bhubaneswar, Odisha, India
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Rishav Das. Built with HTML, CSS &amp; JavaScript.</p>
+    </footer>
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
