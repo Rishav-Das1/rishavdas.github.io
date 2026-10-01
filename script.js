@@ -253,7 +253,7 @@ const CONFIG = {
      3. Paste it into FORMSPREE_ENDPOINT below
    ===================================================================== */
 (function initContactForm() {
-  const FORMSPREE_ENDPOINT = ''; // ← paste your Formspree URL here
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/myezvabj'; // ← paste your Formspree URL here
 
   const form = document.getElementById('contactForm');
   const note = document.getElementById('formNote');
